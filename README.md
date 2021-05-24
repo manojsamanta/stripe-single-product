@@ -4,10 +4,23 @@ This module sets up Stripe for a single electronic product - e.g. a paywalled bl
 
 ## Implementation
 
+### phx_gen_auth
+
+The user model is created using the [phx_gen_auth library](https://github.com/aaronrenner/phx_gen_auth).
+
+We are adding another field in the user model callled 'role', which takes three values - 'admin', 'customer', 'guest'. 
+
+The default is 'guest' after signup. 'Admin' is assigned through the DB and 'admin' user can create blog posts. 'Guest' is upgraded to 'customer' after payment. 'Customer' is allowed to read blog post after login, while 'guest is not.
+
+### Adding the 'post' model
+
+~~~~~~~
+mix phx.gen.html Blog Post posts title:string body:string
+~~~~~~~
 
 
-## Common Instructions
 
+## Default Instructions
 
 To start your Phoenix server:
 
