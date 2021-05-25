@@ -18,6 +18,15 @@ The default is 'guest' after signup. 'Admin' is assigned through the DB and 'adm
 mix phx.gen.html Blog Post posts title:string body:string
 ~~~~~~~
 
+### Payment Setup
+
+We need to write functions "subscribe" and "unsubscribe" to toggle the roles between "guest" and "customer" based on Stripe payments. These functions will interact with Stripe controller.
+
+Additionally, we need logic so that the customer, after payment, goes back to the link he intended to see.
+
+### Authorization Setup
+
+The function "authorize" contains permissions for "admin", "guest" and "customer".
 
 
 ## Default Instructions

@@ -66,6 +66,9 @@ defmodule SingleProductWeb.Router do
     get "/users/settings/confirm_email/:token", UserSettingsController, :confirm_email
 
     resources "/posts", PostController
+
+    get "/payment/new", PaymentController, :new
+    post "/payment/create", PaymentController, :create
   end
 
   scope "/", SingleProductWeb do
