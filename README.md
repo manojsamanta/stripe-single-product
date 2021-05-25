@@ -22,11 +22,14 @@ mix phx.gen.html Blog Post posts title:string body:string
 
 We wrote functions "SingleProduct.Payment.subscribe" and "SingleProduct.Payment.unsubscribe" to toggle the roles between "guest" and "customer" based on Stripe payments. These functions are invoked by the Payment controller that interacts with Stripe.
 
-Additionally, we created authorization logic so that the customer, after payment, goes back to the link he intended to see (Still needs to be done).
+### Redirection
+
+Additionally, we created authorization logic so that the customer, after payment, goes back to the link he intended to see. This is done by passing a hidden parameter to the payment form (not Stripe part). That hidden parameter comes back to the "create" function after payment and can be used to create redirection.
+
 
 ### Authorization Setup
 
-The function "authorize" contains various permissions for "admin", "guest" and "customer".
+The function "authorize" contains various permissions for "admin", "guest" and "customer". Only the "show" function needs to adjust to different kinds of users. The others are only used by "admin".
 
 
 ## Default Instructions
