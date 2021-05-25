@@ -20,13 +20,13 @@ mix phx.gen.html Blog Post posts title:string body:string
 
 ### Payment Setup
 
-We need to write functions "subscribe" and "unsubscribe" to toggle the roles between "guest" and "customer" based on Stripe payments. These functions will interact with Stripe controller.
+We wrote functions "SingleProduct.Payment.subscribe" and "SingleProduct.Payment.unsubscribe" to toggle the roles between "guest" and "customer" based on Stripe payments. These functions are invoked by the Payment controller that interacts with Stripe.
 
-Additionally, we need logic so that the customer, after payment, goes back to the link he intended to see.
+Additionally, we created authorization logic so that the customer, after payment, goes back to the link he intended to see (Still needs to be done).
 
 ### Authorization Setup
 
-The function "authorize" contains permissions for "admin", "guest" and "customer".
+The function "authorize" contains various permissions for "admin", "guest" and "customer".
 
 
 ## Default Instructions

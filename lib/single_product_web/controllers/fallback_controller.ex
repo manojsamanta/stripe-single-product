@@ -17,7 +17,8 @@ defmodule SingleProductWeb.FallbackController do
   end
 
   def call(conn, {:route, post}) do
-    redirect(conn, to: Routes.payment_path(conn, :new))
+	IO.inspect post
+    redirect(conn, to: Routes.payment_path(conn, :new, %{id: post.id}))
   end
 
   def call(conn, {:error, _}) do
